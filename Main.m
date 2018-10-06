@@ -1,14 +1,10 @@
 %**************************************************************************
 clc;clear;
 %Get the whole data in struct format
-file = importdata('letter-recognition.data');
+file = importdata('letter-recognition dataset.data');
 
 %Call the Preprocessing function to create test and training data
 [labels_train,features_train,labels_test,features_test] = Preprocessing(file);
-
-%Normalize the features to range of [0 1]
-features_train = features_train./15;
-features_test = features_test./15;
 
 %%
 %Finding the prior probability of each class 
@@ -101,7 +97,7 @@ for i = 1:26
 end
 
 %Find the 10-fold cross validation error
-error = kfold_Multivariate_Multinomial(labels_train, features_train, labels_test, features_test);
+%error = kfold_Multivariate_Multinomial(labels_train, features_train, labels_test, features_test);
 fprintf('The cross validation error for Multivariate Multinomial Naive Bayes: %.2f\n',error);
 
 %Classification using Multivariate Multinomial Naive Bayes
@@ -133,6 +129,9 @@ fprintf('The accuracy for Multivariate Multinomial Naive Bayes: %.2f%%\n',accura
 Confusion_MatrixM = confusionmat(labels_test,predictions_mul);
 
 %%
+%Normalize the features to range of [0 1]
+features_train = features_train./15;
+features_test = features_test./15;
 [w, bias] = Logistic_Regression(features_train, labels_train);
 fprintf('*****************************************************************\n');
 fprintf('*************************End of training*************************\n');
