@@ -13,4 +13,4 @@ https://archive.ics.uci.edu/ml/machine-learning-databases/letter-recognition/let
 
 Running main.m runs 3 version of Naive Bayes implemented, Logistic regression and ANN with one layer and two layer network.
 
-The ipython file contains the implementation of the whole code in python along with comparison of our results with decision trees and random forests 
+The ipython file (Alphabet.ipynb) contains the implementation of the whole code in python along with comparison of our results with decision trees and random forests 
