@@ -1,14 +1,14 @@
 function [weights_final bias_final] = Logistic_Regression(features_train, labels_train)
 
 %Divide into training set and validation set
-labels_training = labels_train(1:55000);
-labels_validation = labels_train(55001:end);
-features_training = features_train(1:55000,:);
-features_validation = features_train(55001:end,:);
+labels_training = labels_train(1:15000);
+labels_validation = labels_train(15001:end);
+features_training = features_train(1:15000,:);
+features_validation = features_train(15001:end,:);
 
 %Use Xaviers initialization for the weights and bias
-bias = -sqrt(6/(784 + 26)) + 2*sqrt(6/(784 + 26))*rand(784,1);
-w = -sqrt(6/(784 + 26)) + 2*sqrt(6/(784 + 26))*rand(26,784);
+bias = -sqrt(6/(16 + 26)) + 2*sqrt(6/(16 + 26))*rand(26,1);
+w = -sqrt(6/(16 + 26)) + 2*sqrt(6/(16 + 26))*rand(26,16);
 %Initialize Variables
 epoch = 50;
 Entropy = zeros(epoch,1);
